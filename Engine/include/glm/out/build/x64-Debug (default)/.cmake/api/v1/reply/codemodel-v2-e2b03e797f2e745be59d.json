@@ -1,0 +1,38 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"projectIndex" : 0,
+					"source" : "."
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project"
+				}
+			],
+			"targets" : []
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Fanshawe/Fall_Term/INFO-6028_Graphics1/Exam_Practice/INFO-6028_Project1_AnaDjurkovic/Engine/include/glm/out/build/x64-Debug (default)",
+		"source" : "E:/Fanshawe/Fall_Term/INFO-6028_Graphics1/Exam_Practice/INFO-6028_Project1_AnaDjurkovic/Engine/include/glm"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}
