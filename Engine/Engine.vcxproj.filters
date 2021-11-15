@@ -5,13 +5,99 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{8a387129-51b2-475d-aa12-e49aff472abf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Graphics\Models">
+      <UniqueIdentifier>{09b90f54-0345-4b7e-b6bd-f782f249e4b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphics\Shader">
+      <UniqueIdentifier>{d1257d27-5066-44b8-8fff-7e1a08f87557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Models\VAOManager">
+      <UniqueIdentifier>{21bae381-c961-45e7-acb3-e3cc52785f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Common">
+      <UniqueIdentifier>{21a02b31-64ab-4194-9e49-dcafc67102fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{39d0bed3-97ee-4aff-9e14-7870edd6fe6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Lights">
+      <UniqueIdentifier>{09ce007d-f211-4edc-b6e9-ec489166b58d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Graphics\cFileLoader.cpp">
+      <Filter>Graphics\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\cModel.cpp">
+      <Filter>Graphics\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\cVAOManager.cpp">
+      <Filter>Graphics\Models\VAOManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\cShader.cpp">
+      <Filter>Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\cShaderManager.cpp">
+      <Filter>Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\glad.c">
+      <Filter>Graphics\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\globals.cpp">
+      <Filter>Graphics\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\asyncIO_handling.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\GLFW_callbacks.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\SetupGraphics.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Draw.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\cLightHelper.cpp">
+      <Filter>Graphics\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\cLightManager.cpp">
+      <Filter>Graphics\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graphics\cFileLoader.h">
+      <Filter>Graphics\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\cModel.h">
+      <Filter>Graphics\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\cVAOManager.h">
+      <Filter>Graphics\Models\VAOManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\cShaderManager.h">
+      <Filter>Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\sVertex_types.h">
+      <Filter>Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\GLCommon.h">
+      <Filter>Graphics\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\globals.h">
+      <Filter>Graphics\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\cLightHelper.h">
+      <Filter>Graphics\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\cLightManager.h">
+      <Filter>Graphics\Lights</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
