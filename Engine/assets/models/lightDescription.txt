@@ -1,7 +1,7 @@
 ---------- LIGHT 0 -----------
-PosX: -121.0
-PosY: 20.0
-PosZ: 18.0
+PosX: -128.0
+PosY: 1.0
+PosZ: -70.0
 diffuseR: 1.0
 diffuseG: 1.0
 diffuseB: 1.0
@@ -10,10 +10,10 @@ specularR: 1.0
 specularG: 1.0
 specularB: 1.0
 specularPower: 1.0
-attenConst: 0.17
-attenLin: 0.0000100
-attenQuad: 0.0100000
-attenDistCut: 1.0000000
+attenConst: 0.62
+attenLin: 0.0000494
+attenQuad: 0.0000565
+attenDistCut: 100.0000000
 dirX: 0.0
 dirY: 0.0
 dirZ: 0.0
@@ -22,7 +22,7 @@ param1Y: 0.0
 param1Z: 0.0
 param2X: 1.0
 ---------- LIGHT 1 -----------
-PosX: 56.0
+PosX: 95.0
 PosY: 0.0
 PosZ: 13.0
 diffuseR: 1.0
@@ -43,4 +43,4 @@ dirZ: 0.0
 param1X: 0.0
 param1Y: 0.0
 param1Z: 0.0
-param2X: 1.0
+param2X: 0.0

@@ -1,7 +1,7 @@
 ------- CAMERA SETUP ---------
-CameraStartX: -212
+CameraStartX: -100
 CameraStartY: 10
-CameraStartZ: 480
+CameraStartZ: 588
 CameraSpeed: 4
 TargetX: 0
 TargetY: 0
@@ -34,9 +34,9 @@ PosX: 85
 PosY: -110
 PosZ: 10
 Scale: 1
-RotX: 0
+RotX: -3.1416
 RotY: 4.6
-RotZ: 0
+RotZ: 3.1416
 ----------------------------
 ModelName: chair.ply
 isWireframe: 0
@@ -44,7 +44,7 @@ isColOverride: 0
 ColourR: 0.2
 ColourG: 0.1
 ColourB: 0.2
-PosX: 63
+PosX: 57
 PosY: 30
 PosZ: 150
 Scale: 1
@@ -62,9 +62,9 @@ PosX: 0
 PosY: 80
 PosZ: 0
 Scale: 1
-RotX: 0
-RotY: 4.71239
-RotZ: 0
+RotX: -7.854
+RotY: 10.9956
+RotZ: 144.514
 ----------------------------
 ModelName: doll.ply
 isWireframe: 0

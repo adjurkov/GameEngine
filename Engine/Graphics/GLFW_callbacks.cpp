@@ -58,6 +58,25 @@ void glfw_key_callback(GLFWwindow* window, int key, int scancode, int action, in
             if (_selectedObject >= _allModels.size()) { _selectedObject = 0; }
         }
     }
+    // if JUST control is down, rotate object
+    float radiansToRotate = 1.5708; // 90 deg = 1.5708 rad
+    if ((!_shiftDown) && (_controlDown) && (!_altDown))
+    {
+        if ((key == GLFW_KEY_W && action == GLFW_PRESS) || (key == GLFW_KEY_UP && action == GLFW_PRESS)) { _allModels.at(_selectedObject)->orientationXYZ.z += radiansToRotate; }
+        if ((key == GLFW_KEY_A && action == GLFW_PRESS) || (key == GLFW_KEY_LEFT && action == GLFW_PRESS)) { _allModels.at(_selectedObject)->orientationXYZ.x -= radiansToRotate; }
+        if ((key == GLFW_KEY_S && action == GLFW_PRESS) || (key == GLFW_KEY_DOWN && action == GLFW_PRESS)) { _allModels.at(_selectedObject)->orientationXYZ.z -= radiansToRotate; }
+        if ((key == GLFW_KEY_D && action == GLFW_PRESS) || (key == GLFW_KEY_RIGHT && action == GLFW_PRESS)) { _allModels.at(_selectedObject)->orientationXYZ.x += radiansToRotate; }
+        if (key == GLFW_KEY_Q && action == GLFW_PRESS) { _allModels.at(_selectedObject)->orientationXYZ.y -= radiansToRotate; }
+        if (key == GLFW_KEY_E && action == GLFW_PRESS) { _allModels.at(_selectedObject)->orientationXYZ.y += radiansToRotate; }
+
+        std::stringstream ssTitle;
+        ssTitle << "allModels[" << _selectedObject << "].orientationXYZ: "
+            << _allModels.at(_selectedObject)->orientationXYZ.x << ", "
+            << _allModels.at(_selectedObject)->orientationXYZ.y << ", "
+            << _allModels.at(_selectedObject)->orientationXYZ.z;
+        _appTitleText = ssTitle.str();
+    }
+
 
     // if JUST alt is down, move light
     if (!_shiftDown && !_controlDown && _altDown)
