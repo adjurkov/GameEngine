@@ -39,6 +39,9 @@ public:
 	glm::vec3 wholeObjectSpecularRGB;		// Specular HIGHLIGHT colour (usually the same as the light, or white)
 	float wholeObjectShininess_SpecPower;	// 1.0 to ??
 
+	// Alpha Transparency (0.0 to 1.0f)
+	float alphaTransparency;
+
 
 	// All the child model objects
 	std::vector<cModel*> childModels;

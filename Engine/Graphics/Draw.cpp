@@ -6,6 +6,18 @@
 
 void DrawObject(cModel* currentModel, glm::mat4 worldMatrix, GLint World_Matrix_Location, GLint InverseTranspose_Location)
 {
+    // Alpha transparency (so this turns it off and on)
+    glEnable(GL_BLEND);
+
+    // Basic "alpha transparency" (and this is the function we're going to do)
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    // (Should do this outside the draw object function)
+    // Get the uniform 
+    GLint wholeObjectAlphaTransparency_LocID = glGetUniformLocation(_shaderProgram, "wholeObjectAlphaTransparency");
+
+    // Set this value here
+    glUniform1f(wholeObjectAlphaTransparency_LocID, currentModel->alphaTransparency);
 
     // Translation
     glm::mat4 Translation_Matrix = glm::translate(glm::mat4(1.0f), currentModel->positionXYZ);

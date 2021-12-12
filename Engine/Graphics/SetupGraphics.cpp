@@ -36,6 +36,7 @@ void setupShader()
     Projection_Matrix_Location = glGetUniformLocation(_shaderProgram, "matProjection");
     InverseTranspose_Location = glGetUniformLocation(_shaderProgram, "matModelInverseTranspose");
 
+
     // Get the uniform locations of the light shader values
     _allLights.SetUpUniformLocations(_shaderProgram);
 

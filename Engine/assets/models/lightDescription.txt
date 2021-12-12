@@ -1,7 +1,7 @@
 ---------- LIGHT 0 -----------
-PosX: -128.0
-PosY: 1.0
-PosZ: -70.0
+PosX: -55.0
+PosY: 182.0
+PosZ: -51.0
 diffuseR: 1.0
 diffuseG: 1.0
 diffuseB: 1.0

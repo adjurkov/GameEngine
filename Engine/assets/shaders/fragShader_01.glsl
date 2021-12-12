@@ -18,7 +18,12 @@ uniform vec4 wholeObjectSpecularColour;	// Colour of the specular highlight (opt
 // This is used for wireframe or whole object colour. 
 // If bUseDebugColour is TRUE, then the fragment colour is "objectDebugColour".
 uniform bool bUseObjectDebugColour;	
-uniform vec4 objectDebugColourRGBA;		
+uniform vec4 objectDebugColourRGBA;	
+
+// Alpha transparency value	
+uniform float wholeObjectAlphaTransparency;
+
+uniform sampler2d myTexture;
 
 // This will not modulate the colour by the lighting contribution.
 // i.e. shows object colour "as is". 
@@ -104,6 +109,11 @@ void main()
 	//pixelColour.rgb *= 0.0001f;  //"black"
 	//pixelColour.rgb += fNormal.rgb;
 	//pixelColour.r += 1.0f;
+
+	// Set the alpha value
+	// 0.0 = clear
+	// 1.0 = solid
+	pixelColour.a = wholeObjectAlphaTransparency;
 
 };
 

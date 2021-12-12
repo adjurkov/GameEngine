@@ -54,14 +54,16 @@ int main(int argc, char** argv)
     _fileLoader.LoadCurrentScene(_sceneDescriptionFile, _allModels);
     _fileLoader.SetupLights(_lightDescriptionFile, _allLights);
 
-    // Copy the light information into the shader to draw the scene
-    _allLights.CopyLightInfoToShader();
+    
 
     // Main Loop
     while (!glfwWindowShouldClose(_window))
     {
         // Draw scene
         updateVisuals();
+
+        // Copy the light information into the shader to draw the scene
+        _allLights.CopyLightInfoToShader();
         
         glfwSwapBuffers(_window);
         glfwPollEvents();
@@ -161,6 +163,11 @@ void updateVisuals()
     // Update Scene (save/write to file)
     _fileLoader.UpdateCurrentScene(_sceneDescriptionFile, _allModels, _cameraEye, _cameraTarget, _upVector, _cameraSpeed);
     _fileLoader.UpdateLights(_lightDescriptionFile, _allLights);
+    
+
+    // TEMPORARY - setting alpha transparency for this model
+    _allModels.at(2)->alphaTransparency = 0.4f;
+
 
     // Draw all the models
     for (unsigned int i = 0; i != _allModels.size(); i++)
