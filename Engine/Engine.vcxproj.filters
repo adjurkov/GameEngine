@@ -26,6 +26,9 @@
     <Filter Include="Graphics\Lights">
       <UniqueIdentifier>{09ce007d-f211-4edc-b6e9-ec489166b58d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphics\TextureManager">
+      <UniqueIdentifier>{395dccf8-8084-400c-9f51-5f5f030bbe9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics\cFileLoader.cpp">
@@ -70,6 +73,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics\Texture\C24BitBMPpixel.cpp">
+      <Filter>Graphics\TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Texture\cBasicTextureManager.cpp">
+      <Filter>Graphics\TextureManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Texture\CTextureFromBMP.cpp">
+      <Filter>Graphics\TextureManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\cFileLoader.h">
@@ -98,6 +110,15 @@
     </ClInclude>
     <ClInclude Include="Graphics\cLightManager.h">
       <Filter>Graphics\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Texture\C24BitBMPpixel.h">
+      <Filter>Graphics\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Texture\cBasicTextureManager.h">
+      <Filter>Graphics\TextureManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Texture\CTextureFromBMP.h">
+      <Filter>Graphics\TextureManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

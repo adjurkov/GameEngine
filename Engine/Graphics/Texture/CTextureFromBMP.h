@@ -16,7 +16,7 @@
 //#include <gl\freeglut.h>
 //#include <glad/glad.h>
 //#include <GLFW/glfw3.h>
-#include "globalOpenGLStuff.h"	// Summer 2020 INFO-3111
+#include "GLCommon.h"
 
 
 typedef unsigned char uchar;

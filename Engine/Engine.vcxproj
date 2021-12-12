@@ -159,6 +159,9 @@
     <ClCompile Include="Graphics\GLFW_callbacks.cpp" />
     <ClCompile Include="Graphics\globals.cpp" />
     <ClCompile Include="Graphics\SetupGraphics.cpp" />
+    <ClCompile Include="Graphics\Texture\C24BitBMPpixel.cpp" />
+    <ClCompile Include="Graphics\Texture\cBasicTextureManager.cpp" />
+    <ClCompile Include="Graphics\Texture\CTextureFromBMP.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +174,9 @@
     <ClInclude Include="Graphics\GLCommon.h" />
     <ClInclude Include="Graphics\globals.h" />
     <ClInclude Include="Graphics\sVertex_types.h" />
+    <ClInclude Include="Graphics\Texture\C24BitBMPpixel.h" />
+    <ClInclude Include="Graphics\Texture\cBasicTextureManager.h" />
+    <ClInclude Include="Graphics\Texture\CTextureFromBMP.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

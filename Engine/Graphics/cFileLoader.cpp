@@ -119,7 +119,12 @@ bool cFileLoader::LoadPLYFromFile(std::string fileName, sModelDrawInfo& drawInfo
         drawInfo.pVertices[i].nx = vertexVector[i].nx;
         drawInfo.pVertices[i].ny = vertexVector[i].ny;
         drawInfo.pVertices[i].nz = vertexVector[i].nz;
-        drawInfo.pVertices[i].nw = 1.0f;			
+        drawInfo.pVertices[i].nw = 1.0f;		
+
+        drawInfo.pVertices[i].u0 = 1.0f;
+        drawInfo.pVertices[i].v0 = 0.0f;
+        drawInfo.pVertices[i].u1 = 0.0f;
+        drawInfo.pVertices[i].v1 = 0.0f;
     }
 
     // Copy the triangle ("index") values to the index (element) array

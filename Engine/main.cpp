@@ -1,5 +1,5 @@
-// Name: Ana Djurkovic
-// StudentID: 1036572
+// Ana Djurkovic, 2021
+// ana_djurkovic@hotmail.com
 
 #include "GLCommon.h"  // GLFW, glad, glm
 #include "globals.h"   // Graphics-related globals
