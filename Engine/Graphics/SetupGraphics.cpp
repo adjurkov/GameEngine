@@ -5,6 +5,9 @@
 
 void setupShader()
 {
+    // Create the texture manager
+    _textureManager = new cBasicTextureManager();
+
     // Create the shader manager
     _shaderManager = new cShaderManager();
 
@@ -56,8 +59,25 @@ void setupDebugSphere()
     _pDebugSphere->positionXYZ = _allLights.theLights[_selectedLight].position;
 }
 
+void setupTextures()
+{
+    // FOR NOW, set all the texture to this texture
+    GLuint wood_textureNumber = _textureManager->getTextureIDFromName("woodTexture.bmp");
+    // Texture binding..
+    GLuint textureUnit = 14;   // Texture unit go from 0 to 79
+    glActiveTexture(textureUnit + GL_TEXTURE0);   // GL_TEXTURE0 = 33984
+    glBindTexture(GL_TEXTURE_2D, wood_textureNumber);
+    // glBindTextureUnit(texture00Unit, texture00Number);   OpenGL 4.5+ only
+    // Set texture unit in the shader, too
+
+    GLint texture_00_LocID = glGetUniformLocation(_shaderProgram, "texture_00");
+    glUniform1i(texture_00_LocID, textureUnit);
+}
+
 void setupLoadModels()
 {
+
+
     _VAOManager = new cVAOManager();
 
     // Loading Models

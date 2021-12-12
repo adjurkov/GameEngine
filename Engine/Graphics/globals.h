@@ -5,6 +5,7 @@
 #include "cFileLoader.h"
 #include "cLightManager.h"
 #include "cLightHelper.h"
+#include "Texture/cBasicTextureManager.h"
 #include "GLCommon.h"
 
 //---------------------------- WINDOW SETUP VARIABLES ------------------------------
@@ -40,6 +41,7 @@ extern GLint InverseTranspose_Location;
 // Managers
 extern cVAOManager* _VAOManager;
 extern cShaderManager* _shaderManager;
+extern cBasicTextureManager* _textureManager;
 
 //-------------------------------- SCENE OBJECTS -----------------------------------
 

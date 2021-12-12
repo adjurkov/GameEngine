@@ -27,6 +27,7 @@ glm::mat4 _mvp;
 // Managers
 cVAOManager* _VAOManager = NULL;
 cShaderManager * _shaderManager = NULL;
+cBasicTextureManager* _textureManager = NULL;
 
 GLint _mvp_location = -1;
 GLint World_Matrix_Location = -1;

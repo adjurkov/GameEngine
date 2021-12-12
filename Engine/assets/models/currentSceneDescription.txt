@@ -1,7 +1,7 @@
 ------- CAMERA SETUP ---------
-CameraStartX: -100
+CameraStartX: -228
 CameraStartY: 10
-CameraStartZ: 380
+CameraStartZ: 384
 CameraSpeed: 4
 TargetX: 0
 TargetY: 0

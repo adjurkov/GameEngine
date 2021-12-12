@@ -64,6 +64,11 @@ bool cFileLoader::LoadPLYFromFile(std::string fileName, sModelDrawInfo& drawInfo
         file >> tempVertex.b;
         file >> tempVertex.a;
 
+        // Load UVs
+        file >> tempVertex.u0; // maybe try nx if this doesnt work
+        file >> tempVertex.v0; // ny?
+
+
         vertexVector.push_back(tempVertex);
     }
 
@@ -121,8 +126,8 @@ bool cFileLoader::LoadPLYFromFile(std::string fileName, sModelDrawInfo& drawInfo
         drawInfo.pVertices[i].nz = vertexVector[i].nz;
         drawInfo.pVertices[i].nw = 1.0f;		
 
-        drawInfo.pVertices[i].u0 = 1.0f;
-        drawInfo.pVertices[i].v0 = 0.0f;
+        drawInfo.pVertices[i].u0 = vertexVector[i].u0;
+        drawInfo.pVertices[i].v0 = vertexVector[i].v0;
         drawInfo.pVertices[i].u1 = 0.0f;
         drawInfo.pVertices[i].v1 = 0.0f;
     }

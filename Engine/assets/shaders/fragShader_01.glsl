@@ -23,7 +23,7 @@ uniform vec4 objectDebugColourRGBA;
 // Alpha transparency value	
 uniform float wholeObjectAlphaTransparency;
 
-//uniform sampler2d myTexture;
+uniform sampler2D texture_00;
 
 // This will not modulate the colour by the lighting contribution.
 // i.e. shows object colour "as is". 
@@ -72,7 +72,10 @@ void main()
 
 	// TEMPORARY HACK: See if the UV coordinates are actually being passed in
 	pixelColour = vec4(0.0f, 0.0f, 0.0f, 1.0f);
-	pixelColour.rg = fUVx2.xy; 	// S or U as red, T or V as blue
+	//pixelColour.rg = fUVx2.xy; 	// S or U as red, T or V as blue
+
+	pixelColour.rgb = texture(texture_00, fUVx2.xy).rgb;
+
 	return;
 
 	// This is the pixel colour on the screen.

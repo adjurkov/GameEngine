@@ -21,6 +21,7 @@ void DrawDebugSphere(GLint World_Matrix_Location, glm::mat4 worldMatrix, GLint I
 void setupShader();
 void setupDebugSphere();
 void setupLoadModels();
+void setupTextures();
 
 // Update models, lights, window text, camera
 void updateVisuals();
@@ -48,6 +49,21 @@ int main(int argc, char** argv)
     setupShader();
     setupDebugSphere();
     setupLoadModels();
+    setupTextures();
+
+    // Loading textures
+    _textureManager->SetBasePath("assets/textures");
+
+    if (_textureManager->Create2DTextureFromBMPFile("woodTexture.bmp", true))
+    {
+        std::cout << "Loaded the texture" << std::endl;
+    }
+    else
+    {
+        std::cout << "Didn't load the texture" << std::endl;
+    }
+
+
     
     // Load initial scene properties from files
     _fileLoader.SetupCamera(_sceneDescriptionFile, _cameraEye, _cameraTarget, _upVector, _cameraSpeed);
@@ -190,6 +206,7 @@ void shutdown()
     delete _VAOManager;
     delete _shaderManager;
     delete _pDebugSphere;
+    delete _textureManager;
 
 	glfwDestroyWindow(_window); 
 	glfwTerminate();
