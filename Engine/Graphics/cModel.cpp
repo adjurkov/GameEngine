@@ -27,4 +27,14 @@ cModel::cModel()
 
 	// Default to 1.0f (all solid)
 	this->alphaTransparency = 1.0f;
+
+	// Clear all the textures
+	for (unsigned int index = 0; index != cModel::MAX_TEXTURES; index++)
+	{
+		this->textureNames[index] = "";
+		this->textureRatios[index] = 0.0f;
+	}
+	this->textureNames[0] = "BrightColouredUVMap.bmp";
+	this->textureRatios[0] = 1.0f;
+
 }

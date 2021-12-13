@@ -42,6 +42,13 @@ public:
 	// Alpha Transparency (0.0 to 1.0f)
 	float alphaTransparency;
 
+	// Objects can have multiple textures
+	//std::vector<std::string > vecTextures;
+	// If only one texture per object
+	//std::string textureName;
+	static const unsigned int MAX_TEXTURES = 8;
+	std::string textureNames[MAX_TEXTURES];
+	float textureRatios[MAX_TEXTURES];
 
 	// All the child model objects
 	std::vector<cModel*> childModels;

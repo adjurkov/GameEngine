@@ -21,7 +21,7 @@ void DrawDebugSphere(GLint World_Matrix_Location, glm::mat4 worldMatrix, GLint I
 void setupShader();
 void setupDebugSphere();
 void setupLoadModels();
-void setupTextures();
+void setupTextures(cModel* currentModel);
 
 // Update models, lights, window text, camera
 void updateVisuals();
@@ -49,19 +49,21 @@ int main(int argc, char** argv)
     setupShader();
     setupDebugSphere();
     setupLoadModels();
-    setupTextures();
+
 
     // Loading textures
     _textureManager->SetBasePath("assets/textures");
 
     if (_textureManager->Create2DTextureFromBMPFile("woodTexture.bmp", true))
-    {
         std::cout << "Loaded the texture" << std::endl;
-    }
     else
-    {
         std::cout << "Didn't load the texture" << std::endl;
-    }
+    _textureManager->Create2DTextureFromBMPFile("pebblesTexture.bmp", true);
+    // This is the default texture
+    _textureManager->Create2DTextureFromBMPFile("BrightColouredUVMap.bmp", true);
+
+
+
 
 
     
@@ -70,11 +72,18 @@ int main(int argc, char** argv)
     _fileLoader.LoadCurrentScene(_sceneDescriptionFile, _allModels);
     _fileLoader.SetupLights(_lightDescriptionFile, _allLights);
 
-    
+
+    // Setting texture to wood, move this later
+   // _allModels[0]->textureNames[0] = "woodTexture.bmp";
+    _allModels[0]->textureRatios[0] = 1.0f;
 
     // Main Loop
     while (!glfwWindowShouldClose(_window))
     {
+
+        // shouldnt be called every frame, change this
+        setupTextures(_allModels[0]);
+
         // Draw scene
         updateVisuals();
 

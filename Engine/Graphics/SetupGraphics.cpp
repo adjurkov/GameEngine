@@ -59,19 +59,48 @@ void setupDebugSphere()
     _pDebugSphere->positionXYZ = _allLights.theLights[_selectedLight].position;
 }
 
-void setupTextures()
+void setupTextures(cModel* currentModel)
 {
-    // FOR NOW, set all the texture to this texture
-    GLuint wood_textureNumber = _textureManager->getTextureIDFromName("woodTexture.bmp");
-    // Texture binding..
-    GLuint textureUnit = 14;   // Texture unit go from 0 to 79
-    glActiveTexture(textureUnit + GL_TEXTURE0);   // GL_TEXTURE0 = 33984
-    glBindTexture(GL_TEXTURE_2D, wood_textureNumber);
-    // glBindTextureUnit(texture00Unit, texture00Number);   OpenGL 4.5+ only
-    // Set texture unit in the shader, too
+    if(currentModel->textureRatios[0] >= 0.0f)
+    {
+        //GLuint textureNumber = _textureManager->getTextureIDFromName("woodTexture.bmp");
+        GLuint textureNumber = _textureManager->getTextureIDFromName(currentModel->textureNames[0]);
+        // Texture binding..
+        GLuint textureUnit = 0;   // Texture unit go from 0 to 79
+        glActiveTexture(textureUnit + GL_TEXTURE0);   // GL_TEXTURE0 = 33984
+        glBindTexture(GL_TEXTURE_2D, textureNumber);
+        // glBindTextureUnit(texture00Unit, texture00Number);   OpenGL 4.5+ only
+        // Set texture unit in the shader, too
 
-    GLint texture_00_LocID = glGetUniformLocation(_shaderProgram, "texture_00");
-    glUniform1i(texture_00_LocID, textureUnit);
+        GLint texture_00_LocID = glGetUniformLocation(_shaderProgram, "texture_00");
+        glUniform1i(texture_00_LocID, textureUnit);
+    }
+
+    //********************************************************************************
+    if (currentModel->textureRatios[1] >= 0.0f)
+    {
+        // FOR NOW, set all the texture to this texture
+        //GLuint textureNumber = _textureManager->getTextureIDFromName("pebblesTexture.bmp");
+        GLuint textureNumber = _textureManager->getTextureIDFromName(currentModel->textureNames[1]);
+        // Texture binding..
+        GLuint textureUnit = 1;   // Texture unit go from 0 to 79
+        glActiveTexture(textureUnit + GL_TEXTURE0);   // GL_TEXTURE0 = 33984
+        glBindTexture(GL_TEXTURE_2D, textureNumber);
+        // glBindTextureUnit(texture00Unit, texture00Number);   OpenGL 4.5+ only
+        // Set texture unit in the shader, too
+
+        GLint texture_01_LocID = glGetUniformLocation(_shaderProgram, "texture_01");
+        glUniform1i(texture_01_LocID, textureUnit);
+    }
+    //********************************************************************************
+
+    // you shouldnt be getting the uniform location every frame
+    // Set all the texture ratios in the shader
+    GLint textureRatios0to3_LocID = glGetUniformLocation(_shaderProgram, "textureRatios0to3");
+    // Set them
+    glUniform4f(textureRatios0to3_LocID, currentModel->textureRatios[0], currentModel->textureRatios[1], currentModel->textureRatios[2], currentModel->textureRatios[3]);
+
+    return;
 }
 
 void setupLoadModels()

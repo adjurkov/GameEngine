@@ -24,6 +24,16 @@ uniform vec4 objectDebugColourRGBA;
 uniform float wholeObjectAlphaTransparency;
 
 uniform sampler2D texture_00;
+uniform sampler2D texture_01;
+uniform sampler2D texture_02;
+uniform sampler2D texture_03;
+uniform sampler2D texture_04;
+uniform sampler2D texture_05;
+uniform sampler2D texture_06;
+uniform sampler2D texture_07;
+
+uniform vec4 textureRatios0to3; 		//= vec4(1.0f, 0.0f, 0.0f, 0.0f);
+uniform vec4 textureRatios4to7; 		//= vec4(1.0f, 0.0f, 0.0f, 0.0f);
 
 // This will not modulate the colour by the lighting contribution.
 // i.e. shows object colour "as is". 
@@ -74,7 +84,19 @@ void main()
 	pixelColour = vec4(0.0f, 0.0f, 0.0f, 1.0f);
 	//pixelColour.rg = fUVx2.xy; 	// S or U as red, T or V as blue
 
-	pixelColour.rgb = texture(texture_00, fUVx2.xy).rgb;
+	// float texture[4];
+
+
+	pixelColour.rgb = 
+		(texture(texture_00, fUVx2.xy).rgb * textureRatios0to3.x) +
+		(texture(texture_01, fUVx2.xy).rgb * textureRatios0to3.y) +
+		(texture(texture_02, fUVx2.xy).rgb * textureRatios0to3.z) +
+		(texture(texture_03, fUVx2.xy).rgb * textureRatios0to3.w);
+		// + etc... the other 4
+
+	//pixelColour.rgb = texture(texture_01, fUVx2.xy).rgb;
+	//pixelColour.rgb = texture(texture_02, fUVx2.xy).rgb;
+	//pixelColour.rgb = texture(texture_03, fUVx2.xy).rgb;
 
 	return;
 
